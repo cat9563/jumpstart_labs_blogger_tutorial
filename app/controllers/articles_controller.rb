@@ -55,14 +55,16 @@ class ArticlesController < ApplicationController
     redirect_to action: "index"
   end
 
-  def article_params
-    params.require(:article).permit(:title, :body, :tag_list)
-  end
+
 
 private
 
   def article_params
     params.require(:article).permit(:title, :body)
+  end
+
+  def article_params
+    params.require(:article).permit(:title, :body, :tag_list)
   end
 
 end
